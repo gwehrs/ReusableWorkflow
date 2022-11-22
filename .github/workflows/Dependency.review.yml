@@ -1,0 +1,17 @@
+name: 'Dependency Review'
+
+permissions:
+  contents: read      
+
+on:
+  pull_request:
+  workflow_call:
+
+jobs:
+ 
+  dependency_review:
+    uses: gwehrs/demo-repo-test/.github/workflows/dependency-review.yml@v1
+    with:
+      username: gwehrs
+    secrets:
+        token: ${{ secrets.TOKEN }}
